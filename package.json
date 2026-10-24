@@ -1,6 +1,6 @@
 {
   "name": "whale-armor",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "小鲸鱼 — DSH 本地破甲插件：双层提示词注入 + 实时状态徽标",
   "keywords": [
     "dsh",
@@ -42,7 +42,7 @@
   "dsh": {
     "id": "whale-armor",
     "name": "小鲸鱼",
-    "version": "0.5.0",
+    "version": "0.6.0",
     "permissions": "系统提示词注入, 客户端状态条",
     "bundle": {
       "patch": "./cordis.patch.yml"
