@@ -1,0 +1,55 @@
+{
+  "name": "whale-armor",
+  "version": "0.5.0",
+  "description": "小鲸鱼 — DSH 本地破甲插件：双层提示词注入 + 实时状态徽标",
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "plugin",
+    "prompt",
+    "security-research",
+    "authorized-testing"
+  ],
+  "license": "CC-BY-NC-SA-4.0",
+  "type": "module",
+  "main": "./index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./client.js": "./client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "prompts",
+    "scripts",
+    "LICENSE",
+    "THIRD-PARTY-NOTICES.md",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=20.6"
+  },
+  "scripts": {
+    "harness:check": "node --check index.js && node --check client.js",
+    "test": "node --test scripts/verify_plugin.mjs",
+    "verify": "node scripts/verify_plugin.mjs",
+    "verify:semantics": "node scripts/scorer_semantics_test.mjs"
+  },
+  "dsh": {
+    "id": "whale-armor",
+    "name": "小鲸鱼",
+    "version": "0.5.0",
+    "permissions": "系统提示词注入, 客户端状态条",
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true
+    }
+  }
+}
